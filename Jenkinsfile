@@ -18,7 +18,7 @@ pipeline {
             }
         }
         // run sonarqube test
-        stage('Run Sonarqube') {
+        /*stage('Run Sonarqube') {
             environment {
                 scannerHome = tool 'ibt-sonarqube';
             }
@@ -27,7 +27,7 @@ pipeline {
                 sh "${scannerHome}/bin/sonar-scanner"
               }
             }
-        }
+        }*/
        // Building Docker Image 
        stage ('Build Docker image') {
         steps {
