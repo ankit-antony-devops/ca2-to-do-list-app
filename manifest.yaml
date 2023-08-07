@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: to-do-webapp
+  name: to-do-webapp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: to-do-webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: to-do-webapp
+    spec:
+      containers:
+      - image: ca2demo.azurecr.io/to-do-app-image/to-do-app:v1
+        name: to-do-webapp
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 80 
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: to-do-webapp
+  labels:
+    run: to-do-webapp
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: to-do-webapp
+  type: LoadBalancer
