@@ -26,8 +26,7 @@ variables:
   # Agent VM image name
   pool:
   name: Default
-  demands:
-   - agent.name -equals NTIENB067
+  demands: agent.name -equals NTIENB067
 
   # Name of the new namespace being created to deploy the PR changes.
   k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
