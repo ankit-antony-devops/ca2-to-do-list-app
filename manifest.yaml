@@ -18,7 +18,7 @@ spec:
         app: to-do-webapp
     spec:
       containers:
-      - image: ca2demo.azurecr.io/to-do-app-image/to-do-app:v1
+      - image: tfacraksreg.azurecr.io/to-do-app-image/to-do-app:v1
         name: to-do-webapp
         imagePullPolicy: Always
         resources: {}
