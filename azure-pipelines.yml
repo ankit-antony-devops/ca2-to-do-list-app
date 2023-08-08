@@ -8,10 +8,7 @@ trigger:
 resources:
 - repo: self
 
-pool:
-  name: Default
-  demands:
-   - agent.name -equals NTIENB067
+pool: NTIENB067
 
 variables:
 
