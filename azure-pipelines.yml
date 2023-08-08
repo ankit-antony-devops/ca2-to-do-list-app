@@ -8,6 +8,11 @@ trigger:
 resources:
 - repo: self
 
+pool:
+  name: Default
+  demands:
+   - agent.name -equals NTIENB067
+
 variables:
 
   # Container registry service connection established during pipeline creation
