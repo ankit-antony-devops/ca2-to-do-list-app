@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ankitantonydevopscatodolistapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ankitantonydevopscatodolistapp
+  template:
+    metadata:
+      labels:
+        app: ankitantonydevopscatodolistapp 
+    spec:
+      containers:
+        - name: ankitantonydevopscatodolistapp 
+          image: myacrdemoankit.azurecr.io/ankitantonydevopscatodolistapp
+          ports:
+          - containerPort: 8080
