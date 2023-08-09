@@ -15,11 +15,11 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: to-do-webapp
+        app: todolistapp
     spec:
       containers:
-      - image: tfacraksreg.azurecr.io/to-do-app-image/to-do-app:v1
-        name: to-do-webapp
+      - image: tfacraksreg.azurecr.io/todolistappimg:v1.0.0
+        name: todolistapp
         imagePullPolicy: Always
         resources: {}
         ports:
@@ -31,13 +31,13 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
-  name: to-do-webapp
+  name: todolistapp
   labels:
-    run: to-do-webapp
+    run: todolistapp
 spec:
   ports:
   - port: 80
     protocol: TCP
   selector:
-    app: to-do-webapp
+    app: todolistapp
   type: LoadBalancer
